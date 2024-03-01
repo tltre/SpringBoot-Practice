@@ -1,0 +1,27 @@
+# 测试环境配置信息
+server:
+  port: 82
+
+# 打开日志功能
+debug: true
+logging:
+  level:
+    org.example: debug  # 设置日志级别, debug为打印日志
+
+# 指标监控
+management:
+  endpoints:
+    enabled-by-default: true  # 启动所有端点
+    web:
+      exposure:
+        include: "*"  # 暴露所有端点
+  endpoint:
+    health:
+      show-details: always
+
+# 配置图形化界面server的地址
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888

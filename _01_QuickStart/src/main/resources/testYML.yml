@@ -1,0 +1,34 @@
+## 普通值（字面量）
+name: xy
+date: 2024/1/31
+
+## 对象/map
+# 多行写法
+student:
+  class: 201
+  age: 11
+# 行内写法
+teacher: {subject: 语文, age: 51}
+
+## 数组/list/set
+# 多行写法
+pets:
+  - cat
+  - dog
+# 行内写法
+sex: [man, woman]
+
+## 对象数组/对象list/对象set
+students:
+  - name: a
+    age: 15
+  - name: b
+    age: 14
+  - {name: c, age: 16}
+
+## 占位符赋值
+# 自定义一个值
+myPort: 80
+# 使用${key:defaultValue}形式进行占位符赋值，会将key替换成定义的值，若值未定义则使用defaultValue
+server:
+  port: ${myPort:90}

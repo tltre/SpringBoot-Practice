@@ -1,0 +1,30 @@
+# 修改后端服务器端口为 81 端口，防止与static冲突
+server:
+  port: 81
+
+
+spring:
+  # 整合mybatis配置数据库信息
+  datasource:
+    url: jdbc:mysql://localhost:9090/mybatis?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: sy20021213
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # 使用切面类增强，被增强过的类变成动态代理
+  aop:
+    # proxy-target-class 设置代理
+    # true 为 CGLIB 代理，
+    # false 为 jdk 代理
+    proxy-target-class: false
+    # auto 设置是否开启 aop， 默认开启
+    auto: true
+
+  # 指定用何种环境配置
+  profiles:
+    active: test
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml  # mapper映射文件路径
+  type-aliases-package: org/example/domain  # 配置哪个包下的类有默认别名

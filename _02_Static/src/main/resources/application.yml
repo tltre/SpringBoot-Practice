@@ -1,0 +1,13 @@
+# 修改静态资源访问路径
+# 假设资源访问路径为 /res/index.html,修改如下：
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**
+
+# 修改静态资源存储路径
+# 假设资源存储路径为 /resources/new_static，修改如下：
+# 此时访问资源的路径应为 /res/index.html, 但是只能访问到new_static中的index_html
+#spring:
+#  web:
+#    resources:
+#      static-locations: classpath:/new_static
